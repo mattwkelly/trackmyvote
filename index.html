@@ -151,9 +151,9 @@
     fetch('https://api.ipstack.com/check?access_key=fd5a58749eec5f324076bbceda79a6d3') // Call the fetch function passing the url of the API as a parameter
     .then((resp) => resp.json()) // Transform the data into json
     .then(function (data) {
-      /*console.log(redir);
+      console.log(redir);
       console.log(data.region_code);
-      console.log(redir[data.region_code]);*/
+      console.log(redir[data.region_code]);
 
       function setSelectedIndex(s, valsearch) {
         // Loop through all the items in drop down list
