@@ -1,0 +1,176 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      font-family: Helvetica !important;
+    }
+  </style>
+  <meta charset="utf-8">
+
+  <title>Track My Vote</title>
+  <meta name="description" content="Track your vote - fast and easy.">
+  <meta property="og:title" content="Track Your Vote" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.trackmy.vote" />
+  <meta property="og:image" content="" />
+  <meta property="og:title" content="Track your vote - fast and easy." />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" />
+</head>
+
+<body>
+  <script>
+    var redir = {
+      'CA': 'https://california.ballottrax.net/voter/',
+      'AL': 'https://myinfo.alabamavotes.gov/voterview',
+      'AK': 'https://myvoterinformation.alaska.gov/',
+      'AZ':	'https://my.arizona.vote/PortalList.aspx',
+      'AR':	'https://www.voterview.ar-nova.org/voterview',
+      'CA':	'https://california.ballottrax.net/voter/',
+      'CO':	'https://www.sos.state.co.us/voter/pages/pub/olvr/findVoterReg.xhtml',
+      'DE': 'https://ivote.de.gov/voterview',
+      'DC':	'https://www.dcboe.org/Voters/Absentee-Voting/Track-Absentee-Ballot',
+      'FL':	'https://registration.elections.myflorida.com/CheckVoterStatus',
+      'GA':	'https://www.mvp.sos.ga.gov/MVP/mvp.do',
+      'HI':	'https://ballotstatus.hawaii.gov/Default',
+      'ID':	'https://idahovotes.gov/online-voter-tools/',
+      'IN':	'https://indianavoters.in.gov/',
+      'IA':	'https://sos.iowa.gov/elections/absenteeballotstatus/absentee/search',
+      'KS':	'https://myvoteinfo.voteks.org/voterview',
+      'KY':	'https://vrsws.sos.ky.gov/vic/',
+      'LA':	'https://voterportal.sos.la.gov/',
+      'ME':	'https://apps.web.maine.gov/cgi-bin/online/AbsenteeBallot/ballot_status.pl',
+      'MD':	'https://voterservices.elections.maryland.gov/VoterSearch',
+      'MA':	'https://www.sec.state.ma.us/wheredoivotema/track/trackmyballot.aspx',
+      'MI':	'https://mvic.sos.state.mi.us/',
+      'MN':	'https://mnvotes.sos.state.mn.us/AbsenteeBallotStatus.aspx',
+      'MT': 'https://app.mt.gov/voterinfo/',
+      'NE': 'https://www.votercheck.necvr.ne.gov/voterview',
+      'NV': 'https://www.nvsos.gov/votersearch/',
+      'NH': 'https://app.sos.nh.gov/Public/AbsenteeBallot.aspx',
+      'NJ': 'https://voter.svrs.nj.gov/auth/sign-up',
+      'NM': 'https://voterportal.servis.sos.state.nm.us/wheretovote.aspx',
+      'NY': 'https://nysballot.elections.ny.gov/TrackMyBallot/Search',
+      'NC': 'https://vt.ncsbe.gov/RegLkup/',
+      'ND': 'https://vip.sos.nd.gov/AbsenteeTracker.aspx',
+      'OH': 'https://www.sos.state.oh.us/elections/voters/toolkit/ballot-tracking/',
+      'OK': 'https://okvoterportal.okelections.us/',
+      'OR': 'https://secure.sos.state.or.us/orestar/vr/showVoterSearch.do',
+      'PA': 'https://www.pavoterservices.pa.gov/pages/ballottracking.aspx',
+      'RI': 'https://vote.sos.ri.gov/Home/UpdateVoterRecord?ActiveFlag=3',
+      'SC': 'https://info.scvotes.sc.gov/eng/voterinquiry/VoterInformationRequest.aspx?PageMode=AbsenteeInfo',
+      'SD': 'https://vip.sdsos.gov/VIPLogin.aspx',
+      'TN': 'https://tnmap.tn.gov/voterlookup/',
+      'UT': 'https://votesearch.utah.gov/voter-search/search/search-by-voter/track-mail-ballot',
+      'VT': 'https://mvp.vermont.gov/',
+      'VA': 'https://www.elections.virginia.gov/citizen-portal/',
+      'WV': 'https://services.sos.wv.gov/Elections/Voter/AbsenteeBallotTracking',
+      'WI': 'https://myvote.wi.gov/en-US/MyVoterInfo',
+      'WY': 'https://sos.wyo.gov/Elections/State/AbsenteeVoting.aspx',
+    }
+  </script>
+  <center>
+    <div style="width: 100%; margin-top: 5%;">
+      <div><img src="vote.png" width="47"><span style="font-size: 5rem; letter-spacing: -2px; font-weight: 300; font-weight: bold; color: #FA361E;"> Track My Vote</span></div>
+      <p style="font-weight: bold;">Easily track your ballot for the 2020 USA election.</p>
+      <!--<h4><label for="state">Choose your state</label></h4>-->
+      <select id="state" name="state" style="cursor: pointer;">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AL">Alabama</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="DE">Delaware</option>
+        <option value="DC">Washington D.C.</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Maine</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WI">Wyoming</option>
+      </select>
+      <button class="button-primary" id="track" style="background-color: #3971FF; border-color: #3971FF;">Track</button>
+    </div>
+    <hr />
+    <div class="fb-like" data-href="https://www.trackmy.vote" data-width="" data-layout="button" data-action="like"
+      data-size="large" data-share="true"></div><br /><br />
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-size="large" class="twitter-share-button" data-show-count="false">Tweet</a><br /><br />
+    <a data-pin-do="buttonBookmark" data-pin-tall="true" href="https://www.pinterest.com/pin/create/button/"></a>
+  </center>
+
+  <script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=281490895200283&autoLogAppEvents=1"
+    nonce="4jagnAII"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    document.getElementById("track").onclick = function () {
+      var e = document.getElementById("state");
+      var strUser = e.options[e.selectedIndex].value;
+      window.open(redir[e.options[e.selectedIndex].value]);
+    };
+
+    fetch('http://api.ipstack.com/check?access_key=fd5a58749eec5f324076bbceda79a6d3') // Call the fetch function passing the url of the API as a parameter
+    .then((resp) => resp.json()) // Transform the data into json
+    .then(function (data) {
+      /*console.log(redir);
+      console.log(data.region_code);
+      console.log(redir[data.region_code]);*/
+
+      function setSelectedIndex(s, valsearch) {
+        // Loop through all the items in drop down list
+        for (i = 0; i < s.options.length; i++) {
+          if (s.options[i].value == valsearch) {
+            // Item is found. Set its property and exit
+            s.options[i].selected = true;
+            break;
+          }
+        }
+      }
+
+      setSelectedIndex(document.getElementById("state"), data.region_code);
+    })
+    .catch(function (error) {
+      console.log('error!', error);
+    });
+  </script>
+</body>
+</html>
